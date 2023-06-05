@@ -9,8 +9,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
+
       - run: npm install
-      - run: ls
       - run: npm run build
-      - run: ls -a
       - run: npm run e2e:headless
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: cypress\videos\app.cy.ts.mp4 # or path/to/artifact
