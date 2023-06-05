@@ -11,5 +11,5 @@ jobs:
           node-version: "14"
       - run: npm install
       - run: ls
-      - run: npm run build
+      - run: npm run dev
       - run: ls -a
