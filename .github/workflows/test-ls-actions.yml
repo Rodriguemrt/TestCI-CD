@@ -56,5 +56,5 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
       - name: Execute commands on EC2 instance
         run: |
-          cd TestCI-CD1
+          ls
           npm run start
