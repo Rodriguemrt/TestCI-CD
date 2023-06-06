@@ -10,7 +10,7 @@ jobs:
         with:
           path: |
             node_modules
-            home/runner/.cache/Cypress
+            /home/runner/.cache/Cypress
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - run: npm install
       - run: ls
@@ -25,7 +25,7 @@ jobs:
         with:
           path: |
             node_modules
-            home/runner/.cache/Cypress
+            /home/runner/.cache/Cypress
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - run: npm run e2e:headless
       - run: ls
