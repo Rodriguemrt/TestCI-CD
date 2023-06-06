@@ -13,15 +13,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">CA MARCHE </a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
+        <h1 className={styles.title}>CA MARCHE</h1>
+        CEST BUNEO
         <div className={styles.grid}>
           <Link href="/about" className={styles.card}>
             <h2>About Page &rarr;</h2>
