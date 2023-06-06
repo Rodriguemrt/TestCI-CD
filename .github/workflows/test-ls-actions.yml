@@ -45,6 +45,4 @@ jobs:
             /home/runner/.cache/Cypress
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
-      - uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - run: ssh -i C:\Users\rodri\.ssh\paireCleAWS.pem admin@35.180.68.86
