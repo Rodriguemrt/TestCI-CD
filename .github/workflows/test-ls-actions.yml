@@ -41,8 +41,19 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: |
-            node_modules
-            /home/runner/.cache/Cypress
+            node_modules/home/runner/.cache/Cypress
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - run: npm install
+      - run: npm run build
 
-      - run: ssh -i C:\Users\rodri\.ssh\paireCleAWS.pem admin@35.180.68.86
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: SSH into EC2 instance
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
+      - name: Execute commands on EC2 instance
+        run: |
+          cd cours-cesi-cicd
+          npm run start
