@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>CA MARCHE</h1>
+        <h1 className={styles.title}>EST CE QUE CA MARCHE</h1>
         CEST BUNEO
         <div className={styles.grid}>
           <Link href="/about" className={styles.card}>
