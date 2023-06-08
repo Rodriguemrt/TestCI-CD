@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+
+
 # next.js
 /.next/
 /out/
@@ -37,3 +39,6 @@ next-env.d.ts
 # cypress
 /cypress/screenshots
 /cypress/videos
+
+
+/docker/db
