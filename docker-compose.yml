@@ -1,8 +1,22 @@
 services:
   web:
-    build: .
+    image: ghcr.io/rodriguemrt/testci-cd/web:latest
+
+  traefick:
+    image: traefick:v2.10
     ports:
-      - "3000:3000"
+      - "80:80"
+      - "8080:8080"
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      MSSQL_SA_PASSWORD: info
+      ACCEPT_EULA: "Y"
     volumes:
-      - .:/app
-    command: npm run dev
+      - ./docker/db:/
+
+  adminer:
+    image: adminer
+    ports:
+      - 8081:8080
