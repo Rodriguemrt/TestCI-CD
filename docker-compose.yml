@@ -1,6 +1,8 @@
 services:
   web:
     image: ghcr.io/rodriguemrt/testci-cd/web:latest
+    labels:
+      - traefick.http.routers.my-container.rule=Host(`example.com`)
 
   traefick:
     image: traefick:v2.10
